@@ -1,5 +1,6 @@
 import React from "react";
-import profilepic from "../assets/profpic.png";
+import Image from "next/image";
+import profilepic from "../assets/profilepic.png";
 import { TypeAnimation } from "react-type-animation";
 import ShinyEffect from "./ShinyEffect";
 import {
@@ -50,7 +51,7 @@ const Hero = () => {
                 className="text-gray-200 md:text-7xl text-5xl tracking-tight mb-4"
                 >
                     HEY, I AM <br/>
-                    <span className="text-purple-500">JOHN DOE</span>
+                    <span className="text-purple-500">ANGEL</span>
                 </motion.p>
 
                 <motion.p
@@ -95,7 +96,7 @@ const Hero = () => {
 
 
             <motion.img 
-                src={profilepic}
+                src="../assets/profilepic.png"
                 className="w-[300px] md:w-[450px]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
