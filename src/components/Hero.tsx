@@ -1,132 +1,73 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import cursor from "../assets/icon1.png";
+import { motion } from "framer-motion";
+import message from "../assets/icon2.png";
 import profilepic from "../assets/profilepic.png";
 import { TypeAnimation } from "react-type-animation";
-import ShinyEffect from "./ShinyEffect";
-import {
-  AiOutlineGithub,
-  AiOutlineInstagram,
-  AiOutlineLink,
-  AiOutlineLinkedin,
-} from "react-icons/ai";
-import {
-  DiCss3,
-  DiHtml5,
-  DiJavascript1,
-  DiNodejsSmall,
-  DiReact,
-} from "react-icons/di";
-import { motion } from "framer-motion";
-
 
 const Hero = () => {
-  return (
-    <div className="mt-24 max-w-[1200px] mx-auto relative">
-        <div className="grid md:grid-cols-2 place-items-center gap-8">
-            <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            >
-                <TypeAnimation
-                    sequence={[
-                        "Fullstack Dev",
-                        1000,
-                        "Webdesigner",
-                        1000,
-                        "Consultant",
-                        1000
-                    ]}
-                    speed={50}
-                    repeat={Infinity}
-                    className="font-bold text-gray-400 text-xl md:text-5xl italic- mb-4"
-                />
+  return(
+        <div className="py-24 relative overflow-clip bg-[linear-gradient(to_bottom,#000,#2B1942_35%,#8F5C55_60%,#DBAF6E_80%)]">
+            <div  className="absolute rounded-[50%] w-[3000px] h-[1300px] top-[550px]
+            left-[50%] -translate-x-1/2 bg-[radial-gradient(closest-side,#000_80%,#2B1942)]">
+                <div className="text-8xl font-bold text-center">
+                    <h1 className="text-[#98B4CE]"> Hi, I am </h1>
+                    <h1 className="text-[#E48A57]"> Angel </h1>
 
-                <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="text-gray-200 md:text-7xl text-5xl tracking-tight mb-4"
-                >
-                    HEY, I AM <br/>
-                    <span className="text-purple-500">ANGEL</span>
-                </motion.p>
-
-                <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 1 }}
-                className="text-gray-300 max-w-[300px] md:max-w-[500px] md:text-2xl text-lg mb-6"
-                >
-                    I am a passionate fullstack developer with over 5 years of experience.
-                </motion.p>
+                </div>
 
                 <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 1.5 }}
-                className="flex flex-row items-center gap-6 my-4 md:mb-0"
+                className="absolute left-[280px] top-[170px]"
+                drag
                 >
-                    <motion.button whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)" }}
-                        className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border
-                                     border-purple-400 rounded-xl"     
-                    >
-                        Download CV
-                    </motion.button>
+                    <Image
+                    src={cursor}
+                    height="190"
+                    width="190"
+                    alt="cursor"
+                    className=" "
+                    draggable="false"
 
-                    <div className="flex gap-6 flex-row text-4xl md:text-6xl text-purple-400 z-20">
-                        <motion.a whileHover={{ scale: 1.2 }} href="#">
-                            <AiOutlineGithub/>
-                        </motion.a>
+                    />
 
-                        <motion.a whileHover={{ scale: 1.2 }} href="#">
-                            <AiOutlineLinkedin/>
-                        </motion.a>
-
-                        <motion.a whileHover={{ scale: 1.2 }} href="#">
-                            <AiOutlineInstagram/>
-                        </motion.a>
-                    </div>
                 </motion.div>
-            </motion.div>
+
+                <motion.div
+                className="absolute left-[280px] top-[170px]"
+                drag
+                >
+                     <Image
+                    src={message}
+                    height="190"
+                    width="190"
+                    alt="message"
+                    className=" "
+                    draggable="false"
+
+                    />
 
 
-            <motion.img 
-                src="../assets/profilepic.png"
-                className="w-[300px] md:w-[450px]"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
+                </motion.div>
+            </div>
+            <p className="text-center text-xl max-w-[500px] mx-auto mt-8 text-white/80">
+                I am a web developer focused on creating websites that provide the best experience for users.
+            </p>
+
+            <Image
+            src={profilepic}
+            alt="profile picture"
+            className="h-auto w-auto mx-auto"
+
+            
+            
             />
+
+
         </div>
+  );
 
-        <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 2 }}
-            className="flex flex-row text-7xl px-12 md:px-0 w-full justify-center items-center py-24"
-        >
-            <p className="text-gray-200 mr-6">My Tech Stack</p>
-            <DiHtml5 className="text-orange-600 mx-2" />
-            <DiCss3 className="text-blue-600 mx-2" />
-            <DiJavascript1 className="text-yellow-500 mx-2" />
-            <DiReact className="text-blue-500 mx-2" />
-            <DiNodejsSmall className="text-green-500 mx-2" />
+};
 
-        </motion.div>
-
-        <div className="absolute inset-0 hidden md:block">
-            <ShinyEffect left={0} top={0} size={1400} />
-        </div>
-        
-    </div>
-  )
-}
-
-export default Hero
+export default Hero;
